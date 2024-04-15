@@ -84,10 +84,15 @@ while True:
 
 ## OUTPUT:
 client:
+
 ![Screenshot 2024-04-15 181948](https://github.com/ZafreenJagir/SocketStudy/assets/144870573/9afe68c0-d15d-483a-a1c0-ebf2ae431db0)
 
+
 server:
+
+
 ![Screenshot 2024-04-15 182036](https://github.com/ZafreenJagir/SocketStudy/assets/144870573/490cb32f-fabb-423e-b013-27572fa41ef1)
+
 
 ## Result:
 Thus the study of Socket Programming Completed Successfully

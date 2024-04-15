@@ -57,41 +57,39 @@ Socket programming finds applications in various domains, including web developm
 CLIENT:
 ```
 import socket
+from datetime import datetime
 s=socket.socket()
 s.bind(('localhost',8000))
 s.listen(5)
 c,addr=s.accept()
-while True:
-   i=input("Enter a data: ")
-   c.send(i.encode())
-   ack=c.recv(1024).decode()
-   if ack:
-      print(ack)
-      continue
-   else:
-      c.close()
-      break
+print("Client Address : ",addr)
+now = datetime.now()
+c.send(now.strftime("Date: %d/%m/%Y and Time: %H:%M:%S").encode())
+ack=c.recv(1024).decode()
+if ack:
+ print(ack)
+c.close()
+
 ```
 SERVER:
 ```
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))
-while True:
-    print(s.recv(1024).decode())
-    s.send("Acknowledgement Received".encode())
+print(s.getsockname())
+print(s.recv(1024).decode())
+s.send("acknowledgement recived from the server".encode())
 ```
 
 ## OUTPUT:
 client:
 
-![Screenshot 2024-04-15 181948](https://github.com/ZafreenJagir/SocketStudy/assets/144870573/9afe68c0-d15d-483a-a1c0-ebf2ae431db0)
+![Screenshot 2024-04-15 185010](https://github.com/ZafreenJagir/SocketStudy/assets/144870573/717f923f-d886-4ca5-9cc1-751538e35587)
 
 
 server:
 
-
-![Screenshot 2024-04-15 182036](https://github.com/ZafreenJagir/SocketStudy/assets/144870573/490cb32f-fabb-423e-b013-27572fa41ef1)
+![Screenshot 2024-04-15 185037](https://github.com/ZafreenJagir/SocketStudy/assets/144870573/aa27b8ee-9dd7-402b-8845-1b25fd651b77)
 
 
 ## Result:

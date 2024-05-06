@@ -1,5 +1,8 @@
 # Ex.No:1a  			Study of Socket Programming
 
+
+## NAME: ZAFREEN J  
+## REGISTER NO: 212223040252
 ## Aim: 
 To perform a study on Socket Programming
 ## Introduction:
